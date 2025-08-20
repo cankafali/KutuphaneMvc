@@ -52,30 +52,30 @@
                     </ul>
                 </div>
                 <ul class="navbar-nav navbar-right">
-
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown"
-                           <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                               <i data-feather="user"></i>
-                               <span class="d-sm-none d-lg-inline-block"></span>
-                          </a>
-                        <div class="dropdown-menu dropdown-menu-right pullDown">
-                            <div class="dropdown-title">Hello Sarah Smith</div>
-                            <a href="profile.html" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
+                    @if(Session["Username"] != null)
+                    {
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <i data-feather="user"></i>
+                                <span class="d-sm-none d-lg-inline-block">@Session["Username"]</span>
                             </a>
-                            <a href="timeline.html" class="dropdown-item has-icon">
-                                <i class="fas fa-bolt"></i> Activities
+                            <div class="dropdown-menu dropdown-menu-right pullDown">
+                                <div class="dropdown-title">Merhaba @Session["Username"]</div>
+                                <div class="dropdown-divider"></div>
+                                <a href="@Url.Action("Logout", "Account")" class="dropdown-item has-icon text-danger">
+                                    <i class="fas fa-sign-out-alt"></i> Çıkış
+                                </a>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("Login", "Account")" class="nav-link nav-link-lg">
+                                <i data-feather="log-in"></i>
                             </a>
-                            <a href="#" class="dropdown-item has-icon">
-                                <i class="fas fa-cog"></i> Settings
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="auth-login.html" class="dropdown-item has-icon text-danger">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </a>
-                        </div>
-                    </li>
+                        </li>
+                    }
                 </ul>
             </nav>
             <div class="main-sidebar sidebar-style-2">
@@ -99,41 +99,46 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="/Book/Index">Tüm Kitaplar</a></li>
-                                <li><a class="nav-link" href="/Book/BookForm">Kitap Ekle</a></li>
+                                @if(Session["Role"]?.ToString() == "Admin")
+                                {
+                                    <li><a class="nav-link" href="/Book/BookForm">Kitap Ekle</a></li>
+                                }
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Üyeler</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/Uye/Index">Tüm Üyeler</a></li>
-                                <li><a class="nav-link" href="/Uye/YeniUye">Yeni Üye</a></li>
-                                <li><a class="nav-link" href="/Uye/Aski">Askıya Alınanlar</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="list"></i><span>Raflar&Kategori</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/Raf/Index">Raf Listesi</a></li>
-                                <li><a class="nav-link" href="/Kategori/Index">Kategori Listesi</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="repeat"></i><span>Ödünç İşlemleri</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/Emanet/Index">Aktif Ödünçler</a></li>
-                                <li><a class="nav-link" href="/Emanet/Emanet">Yeni Ödünç</a></li>
-                                <li><a class="nav-link" href="email-read.html">İade Bekleyen Onaylar </a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="file-text"></i><span>Raporlar</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="email-inbox.html">Aylık Rapor</a></li>
-                                <li><a class="nav-link" href="email-compose.html">Tür Bazlı Okunma</a></li>
-                                <li><a class="nav-link" href="email-read.html">Üye Aktivite Raporları</a></li>
-                            </ul>
-                        </li>
+                        @if(Session["Role"]?.ToString() == "Admin")
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Üyeler</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Uye/Index">Tüm Üyeler</a></li>
+                                    <li><a class="nav-link" href="/Uye/YeniUye">Yeni Üye</a></li>
+                                    <li><a class="nav-link" href="/Uye/Aski">Askıya Alınanlar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="list"></i><span>Raflar&Kategori</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Raf/Index">Raf Listesi</a></li>
+                                    <li><a class="nav-link" href="/Kategori/Index">Kategori Listesi</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="repeat"></i><span>Ödünç İşlemleri</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Emanet/Index">Aktif Ödünçler</a></li>
+                                    <li><a class="nav-link" href="/Emanet/Emanet">Yeni Ödünç</a></li>
+                                    <li><a class="nav-link" href="email-read.html">İade Bekleyen Onaylar </a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="file-text"></i><span>Raporlar</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="email-inbox.html">Aylık Rapor</a></li>
+                                    <li><a class="nav-link" href="email-compose.html">Tür Bazlı Okunma</a></li>
+                                    <li><a class="nav-link" href="email-read.html">Üye Aktivite Raporları</a></li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
                 </aside>
             </div>

@@ -135,6 +135,7 @@
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\RafController.cs" />
     <Compile Include="Controllers\UyeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1166,6 +1167,7 @@
     <Content Include="Views\Kategori\Index.cshtml" />
     <Content Include="Views\Kategori\Create.cshtml" />
     <Content Include="Views\Kategori\KategoriForm.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
