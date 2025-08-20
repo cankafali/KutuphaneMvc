@@ -1,0 +1,78 @@
+﻿@model List<KutuphaneMvc.Models.Entity.UYE>
+@{
+    ViewBag.Title = "Index";
+    // (İsteğe bağlı) Rol adları sözlüğü — ROLE_ID → Görünen ad
+    var rolAdlari = new Dictionary<int?, string> { { 1, "Admin" }, { 2, "Üye" }};
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Üyeler</h4>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-md">
+                <thead>
+                    <tr>
+                        <th>Üye ID</th>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Telefon</th>
+                        <th>Üyelik Tarihi</th>
+                        <th>Ceza Puanı</th>
+                        <th>Yetki</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model == null || !Model.Any())
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center text-muted">Kayıt bulunamadı.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var u in Model)
+                        {
+                            // badge rengi (küçük görsel iyileştirme)
+                            var cezaClass = u.CEZA_PUAN >= 50 ? "badge badge-danger"
+                                         : u.CEZA_PUAN >= 20 ? "badge badge-warning"
+                                         : "badge badge-success";
+
+                            <tr>
+                                <td>@u.UYE_ID</td>
+                                <td>@u.AD</td>
+                                <td>@u.SOYAD</td>
+                                <td>@u.TELEFON</td>
+                                <td>@(u.UYELIK_TARIHI?.ToString("yyyy-MM-dd") ?? "-")</td>
+                                <td><span class="@cezaClass">@u.CEZA_PUAN</span></td>
+                                <td>@(rolAdlari.ContainsKey(u.ROLE_ID) ? rolAdlari[u.ROLE_ID] : ("Rol #" + u.ROLE_ID))</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-footer text-right">
+        <nav class="d-inline-block">
+            <ul class="pagination mb-0">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">
+                        1 <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿@model List<KutuphaneMvc.Models.Entity.View_EmanetKitap>
+
+@{
+    ViewBag.Title = "Ödünçler";
+    var i = 0;
+}
+
+<div class="card">
+    <div class="card-header"><h4>Aktif Ödünçler</h4></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-md">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad</th>
+                        <th>Kitap Adı</th>
+                        <th>Kitap ID</th>
+                        <th>Alınış Tarihi</th>
+                        <th>Teslim Tarihi</th>
+                        @*<th>Durum</th>*@
+                        <th>Seçenekler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                    <tr><td colspan="5" class="text-center text-muted">Kayıt yok.</td></tr>
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                    <tr>
+
+                        <td>@item.EmanetID</td>
+                        <td>@item.UyeAdi @item.UyeSoyadi</td>
+                        <td>@item.KitapAdi</td>
+                        <td>@item.KITAP_ID</td>
+                        <td>@(item.ALINIS_TARIHI.HasValue ? item.ALINIS_TARIHI.Value.ToShortDateString() : "")</td>
+                        <td>@(item.TESLIM_TARIHI.HasValue ? item.TESLIM_TARIHI.Value.ToShortDateString() : "")</td>
+
+                        @*<td>
+                                @if (item.DURUM == true)
+                                {
+                                    <div class="badge badge-success">Müsait</div>
+                                }
+                                else
+                                {
+                                    <div class="badge badge-danger">Dolu</div>
+                                }
+                            </td>*@
+                        <td>
+                            <a href="@Url.Action("Details","Emanet", new { id = item.EmanetID })" class="btn btn-primary btn-sm">Detail</a>
+
+                            @if (item.DURUM == false)
+                        {
+                            <a href="@Url.Action("EmanetSil","Emanet", new { id = item.EmanetID })" class="btn btn-success btn-sm">Teslim Al</a>
+                        }
+                        </td>
+                    </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

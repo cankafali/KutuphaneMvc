@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6dd28c44f6ea456a87c2f45a66804f11" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="LibraryDBModel.EMANET" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.KATEGORI" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.KITAP" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.RAF" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.RAF_KATEGORI" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.RAF_TRANSFER" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.REZERVASYON" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.ROLE" Width="1.5" PointX="8.5" PointY="1.125" />
+        <EntityTypeShape EntityType="LibraryDBModel.UYE" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.View_EmanetKitap" Width="1.5" PointX="10.375" PointY="1.25" />
+        <EntityTypeShape EntityType="LibraryDBModel.KITAP_KATEGORI" Width="1.5" PointX="8.5" PointY="3.5" />
+        <EntityTypeShape EntityType="LibraryDBModel.View_RAF_KITAP" Width="1.5" PointX="12.125" PointY="1.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

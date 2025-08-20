@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- blank.html  21 Nov 2019 03:54:41 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>LibraryOS</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="~/Content/otika-bootstrap-admin-template/assets/css/app.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/Content/otika-bootstrap-admin-template/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/otika-bootstrap-admin-template/assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/Content/otika-bootstrap-admin-template/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='~/Content/otika-bootstrap-admin-template/assets/img/favicon.ico' />
+    <link rel="stylesheet" href="" ~ /Content/otika-bootstrap-admin-templateassets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="" ~ /Content/otika-bootstrap-admin-templateassets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    @RenderSection("Heads", false)
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar sticky">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                                <i data-feather="maximize"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <form class="form-inline mr-auto">
+                                <div class="search-element">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                                    <button class="btn" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown"
+                           <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                               <i data-feather="user"></i>
+                               <span class="d-sm-none d-lg-inline-block"></span>
+                          </a>
+                        <div class="dropdown-menu dropdown-menu-right pullDown">
+                            <div class="dropdown-title">Hello Sarah Smith</div>
+                            <a href="profile.html" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Profile
+                            </a>
+                            <a href="timeline.html" class="dropdown-item has-icon">
+                                <i class="fas fa-bolt"></i> Activities
+                            </a>
+                            <a href="#" class="dropdown-item has-icon">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="auth-login.html" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="index.html">
+                            <div class="logo-container" style="text-align: center; margin-top: 20px;">
+                                <img alt="image" src="~/Content/otika-bootstrap-admin-template/assets/img/FİNAL.png" class="header-logo" style="width: 150px; height: auto; display: block; margin: 0 auto;" />
+                                <span class="logo-name" style="font-size: 18px; font-weight: 500; letter-spacing: 0.5px; display: block;margin-top : -30px; text-transform: none;">LibraryOS</span>
+                            </div>
+                        </a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Main</li>
+                        <li class="dropdown">
+                            <a href="/Home/Index" class="nav-link"><i data-feather="monitor"></i><span>Anasayfa</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown">
+                                <i data-feather="book"></i><span>Kitaplar</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Book/Index">Tüm Kitaplar</a></li>
+                                <li><a class="nav-link" href="/Book/BookForm">Kitap Ekle</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="users"></i><span>Üyeler</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Uye/Index">Tüm Üyeler</a></li>
+                                <li><a class="nav-link" href="/Uye/YeniUye">Yeni Üye</a></li>
+                                <li><a class="nav-link" href="/Uye/Aski">Askıya Alınanlar</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="list"></i><span>Raflar&Kategori</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Raf/Index">Raf Listesi</a></li>
+                                <li><a class="nav-link" href="/Kategori/Index">Kategori Listesi</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="repeat"></i><span>Ödünç İşlemleri</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Emanet/Index">Aktif Ödünçler</a></li>
+                                <li><a class="nav-link" href="/Emanet/Emanet">Yeni Ödünç</a></li>
+                                <li><a class="nav-link" href="email-read.html">İade Bekleyen Onaylar </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="file-text"></i><span>Raporlar</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="email-inbox.html">Aylık Rapor</a></li>
+                                <li><a class="nav-link" href="email-compose.html">Tür Bazlı Okunma</a></li>
+                                <li><a class="nav-link" href="email-read.html">Üye Aktivite Raporları</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-body">
+                        @RenderBody()
+                    </div>
+                </section>
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <a href="templateshub.net">Templateshub</a></a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+    <script src="~/Content/otika-bootstrap-admin-template/assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="~/Content/otika-bootstrap-admin-template/assets/bundles/datatables/datatables.min.js"></script>
+    <script src="~/Content/otika-bootstrap-admin-template/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/otika-bootstrap-admin-template/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Page Specific JS File -->
+    <!-- Template JS File -->
+    <script src="~/Content/otika-bootstrap-admin-template/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/Content/otika-bootstrap-admin-template/assets/js/custom.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/Content/otika-bootstrap-admin-template/assets/js/page/datatables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    @RenderSection("Scripts", false)
+</body>
+
+<!-- blank.html  21 Nov 2019 03:54:41 GMT -->
+</html>
