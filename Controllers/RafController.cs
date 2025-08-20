@@ -17,7 +17,7 @@ namespace KutuphaneMvc.Controllers
             return View(data);
         }
 
-        public ActionResult Yeniuye()
+        public ActionResult YeniRaf()
         {
             return View();
         }
