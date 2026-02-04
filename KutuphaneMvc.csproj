@@ -1046,6 +1046,11 @@
     <Content Include="Content\otika-bootstrap-admin-template\vector-map.html" />
     <Content Include="Content\otika-bootstrap-admin-template\widget-chart.html" />
     <Content Include="Content\otika-bootstrap-admin-template\widget-data.html" />
+    <Content Include="docs\screenshots\books.png" />
+    <Content Include="docs\screenshots\category.png" />
+    <Content Include="docs\screenshots\dashboard.png" />
+    <Content Include="docs\screenshots\members.png" />
+    <Content Include="docs\screenshots\newmembersform.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
