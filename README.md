@@ -19,3 +19,21 @@ Staj döneminde CRUD, Entity Framework ve MVC pattern pratiği amacıyla yapılm
 Bu proje SQL Server veritabanına bağlıdır.
 Staj döneminde geliştirildiği için veritabanı dosyası repoya eklenmemiştir.
 Proje yapısı ve ekran görüntüleri üzerinden incelenebilir.
+
+## Screenshots
+
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Books Management
+![Books](docs/screenshots/books.png)
+
+### Category List
+![Category](docs/screenshots/category.png)
+
+### Members Page
+![Members](docs/screenshots/members.png)
+
+### New Member Form
+![New Member Form](docs/screenshots/NEWMEMBERSFORM.png)
+
