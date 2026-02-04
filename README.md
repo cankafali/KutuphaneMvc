@@ -35,5 +35,5 @@ Proje yapısı ve ekran görüntüleri üzerinden incelenebilir.
 ![Members](docs/screenshots/members.png)
 
 ### New Member Form
-![New Member Form](docs/screenshots/NEWMEMBERSFORM.png)
+![New Member Form](docs/screenshots/newmembersform.png)
 
