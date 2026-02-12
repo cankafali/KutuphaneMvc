@@ -11,9 +11,14 @@ namespace KutuphaneMvc.Controllers
     {
         private LibraryDBEntities1 db = new LibraryDBEntities1();
 
+        /// <summary>
+        /// Raflar ve ilişkili kitapların listelendiği görünümü döndürür.
+        /// Veriler, raf ve kitap ilişkilerini sağlayan veritabanı görünümünden alınır.
+        /// </summary>
+        /// <returns>Raf ve kitap bilgilerini içeren liste.</returns>
         public ActionResult Index()
         {
-            var data = db.View_RAF_KITAP.ToList(); // View'i kullanıyorsun zaten
+            var data = db.View_RAF_KITAP.ToList(); // Raf ve kitap ilişkilerini sağlayan veritabanı görünümünü kullan
             return View(data);
         }
 
