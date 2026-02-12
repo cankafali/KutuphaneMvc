@@ -1166,6 +1166,7 @@
     <Content Include="Views\Emanet\Index.cshtml" />
     <Content Include="Views\Emanet\Emanet.cshtml" />
     <Content Include="Views\Raf\Index.cshtml" />
+    <Content Include="Views\Raf\YeniRaf.cshtml" />
     <Content Include="Views\Uye\Index.cshtml" />
     <Content Include="Views\Uye\Yeniuye.cshtml" />
     <Content Include="Views\Uye\Aski.cshtml" />

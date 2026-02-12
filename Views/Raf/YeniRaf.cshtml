@@ -1,0 +1,24 @@
+@model KutuphaneMvc.Models.Entity.RAF
+@{
+    ViewBag.Title = "Yeni Raf";
+}
+
+<h2>Yeni Raf</h2>
+
+@using (Html.BeginForm("YeniRaf", "Raf", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.RAF_AD)
+        @Html.TextBoxFor(m => m.RAF_AD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KAPASITE)
+        @Html.TextBoxFor(m => m.KAPASITE, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KAT_NO)
+        @Html.TextBoxFor(m => m.KAT_NO, new { @class = "form-control", type = "number" })
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+}
